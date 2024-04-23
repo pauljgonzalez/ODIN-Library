@@ -61,10 +61,14 @@ form{
     width: calc(100%-32px);
     background-color: #F0F0F0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) ;
+    grid-template-columns: repeat(auto-fill, minmax(275px,15%)) ;
+    grid-template-rows: repeat(auto-fill, minmax(5%,25%));
     gap: 16px;
     padding: 32px;
 }
-
-/* Have to figure out how to add array to cards
-Make a example card with data and lay it out first */
+.book{
+    background-color: #49A078;
+    border-radius: 32px;
+    text-align: center;
+    padding: 32px;
+}
