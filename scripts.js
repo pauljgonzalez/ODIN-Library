@@ -44,19 +44,28 @@ function addDivs(){
     pagesDiv.className = "pages";
     let statusDiv = document.createElement("div");
     statusDiv.className = "status";
-
+    let removeBtn = document.createElement("BUTTON");
+    removeBtn.className = "remove";
     bookDiv.className = "book";
-
-    bookDiv.appendChild(titleDiv)
-    bookDiv.appendChild(authorDiv)
-    bookDiv.appendChild(pagesDiv)
+    removeBtn.value = counter;
+    removeBtn.onclick = function(){
+        this.parentElement.remove();
+        myLibrary.splice(removeBtn.value,1);
+        counter --;
+   }
+   
+    bookDiv.appendChild(titleDiv);
+    bookDiv.appendChild(authorDiv);
+    bookDiv.appendChild(pagesDiv);
     bookDiv.appendChild(statusDiv)
+    bookDiv.appendChild(removeBtn);
+
+    
+   
 
     document.querySelector(".book-display .book .title").innerHTML = title;
-    document.querySelector(".book-display .book .author").innerHTML = author;
-    document.querySelector(".book-display .book .pages").innerHTML = pages;
-    document.querySelector(".book-display .book .status").innerHTML = status;
+    document.querySelector(".book-display .book .author").innerHTML = "By: "+ author;
+    document.querySelector(".book-display .book .pages").innerHTML = pages +" Pages";
+    document.querySelector(".book-display .book .status").innerHTML = "Status: "+ status;
+    document.querySelector(".book-display .book .remove").innerHTML = "Remove Book";
 }
-
-
-
